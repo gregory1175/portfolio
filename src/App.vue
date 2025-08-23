@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import home from './templates/homePortfolio.vue'
+import Navigation from '@/components/navigation/navigationBlock.vue'
 </script>
 
 <template>
-  <home />
+  <Navigation />
+  <router-view />
 </template>
-
-<style></style>
