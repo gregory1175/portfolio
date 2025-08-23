@@ -10,7 +10,11 @@
     </div>
     <h3 class="info-title">Что здесь можно найти?</h3>
     <div class="header-info">
-      <p class="info-text">-> Посмотреть мое <router-link :to="{ name: 'portfolio' }" class="route protfolio">Портфолио</router-link>, найти ссылки на мои соц сети и не только</p>
+      <p class="info-text">
+        -> Посмотреть мое
+        <router-link :to="{ name: 'portfolio' }" class="route protfolio">Портфолио</router-link>,
+        найти ссылки на мои соц сети и не только
+      </p>
       <p class="info-text">-> Ознакомиться с моими проектами и технологиями, которые я использую</p>
       <p class="info-text">-> Связаться со мной для сотрудничества или обсуждения проектов</p>
     </div>
@@ -22,7 +26,6 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-top: 32px;
 }
 
 /* title */
@@ -42,8 +45,6 @@
   line-height: 32px;
   font-weight: 400;
   color: rgb(255, 255, 255);
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
-
 }
 
 .greetings-title {
@@ -67,6 +68,5 @@
 }
 .protfolio:hover {
   color: rgb(255, 255, 255);
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.2);
 }
 </style>

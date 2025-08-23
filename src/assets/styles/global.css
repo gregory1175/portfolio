@@ -39,13 +39,7 @@ body {
     'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana,
     sans-serif;
 }
-@media screen and (width >= 686px) {
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-}
+
 /* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
 ul[class],
 ol[class] {
@@ -84,4 +78,9 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+#app {
+  min-height: 100vh;
+  position: relative;
 }

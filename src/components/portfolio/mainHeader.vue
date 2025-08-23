@@ -22,7 +22,7 @@ import '@styles/sectionStyles/local.css'
 .header {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
   position: relative;
 }
 
@@ -35,7 +35,7 @@ import '@styles/sectionStyles/local.css'
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 32px;
+  gap: 16px;
 }
 
 .header-title {
@@ -59,7 +59,6 @@ import '@styles/sectionStyles/local.css'
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-  color: rgba(126, 126, 126, 1);
-  opacity: 0.4;
+  color: rgb(255, 255, 255);
 }
 </style>

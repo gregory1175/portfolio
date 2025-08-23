@@ -1,22 +1,53 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 const showbutton = ref(true)
 const showMenu = ref(false)
+
+const paddingValue = ref('8px')
+
+watch(showMenu, (newVal) => {
+  paddingValue.value = newVal ? '0' : '8px'
+})
 </script>
 
 <template>
-  <div class="navigate" >
-  <button v-if="showbutton" @mousedown="showbutton = false; showMenu = true" class="button button-nav"><img src="/public/burger.svg" class="navigate-img"/></button>
-  <h3 v-if="showbutton" @mousedown="showbutton = false; showMenu = true" class="navigate-title">
-    Навигация</h3>
+  <div class="navigate" :style="{ padding: paddingValue }">
+    <button
+      v-if="showbutton"
+      @mousedown="
+        showbutton = false,
+        showMenu = true
+      "
+      class="button button-nav"
+    >
+      <img src="/public/burger.svg" class="navigate-img" />
+    </button>
+    <h3
+      v-if="showbutton"
+      @mousedown="
+        showbutton = false,
+        showMenu = true
+      "
+      class="navigate-title"
+    >
+      Навигация
+    </h3>
   </div>
   <nav v-if="showMenu" class="route-container">
-    <button class="button menu-button" @mousedown="showbutton = true; showMenu = false"><p class="menu-text"> скрыть меню</p></button>
+    <button
+      class="button menu-button"
+      @mousedown="
+        showbutton = true,
+        showMenu = false
+      "
+    >
+      <p class="menu-text">скрыть меню</p>
+    </button>
     <router-link :to="{ name: 'main' }" class="main route">Главная</router-link>
     <router-link :to="{ name: 'portfolio' }" class="route protfolio">Портфолио</router-link>
-    <!-- <router-link :to="{ name: 'links' }" class="route">Основные кейсы</router-link>
-    <router-link :to="{ name: 'links' }" class="route">Проекты</router-link>
+    <router-link :to="{ name: 'projects' }" class="route projects">Проекты</router-link>
+    <!-- <router-link :to="{ name: 'links' }" class="route">Проекты</router-link>
     <router-link :to="{ name: 'links' }" class="route">Статьи</router-link> -->
     <router-link :to="{ name: 'links' }" class="route links">Ссылки</router-link>
   </nav>
@@ -33,8 +64,20 @@ const showMenu = ref(false)
   background-color: rgba(255, 255, 255, 1);
 }
 
+@media screen and (width > 1069px) {
+  .navigate {
+  border: 1px dashed rgba(126, 126, 126, 0.4);
+  }
+}
+@media screen and (width <= 1068px) {
+  .navigate {
+    left: auto;
+    right: 16px;
+  }
+}
+
 .navigate-title {
-  display: flex ;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -42,6 +85,14 @@ const showMenu = ref(false)
   line-height: 24px;
   font-weight: 400;
   cursor: pointer;
+}
+
+@media screen and (width <= 1068px) {
+  .navigate-title {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
 }
 
 .navigate-title:hover {
@@ -76,23 +127,7 @@ const showMenu = ref(false)
 }
 
 .button-nav {
-    cursor: pointer;
-}
-
-@media screen and (width <= 1068px) {
-  .button-nav {
-    opacity: 0;
-    visibility: hidden;
-        display: none;
-  }
-
-  .navigate-img {
-    opacity: 0;
-    visibility: hidden;
-    width: 0;
-    height: 0;
-    display: none;
-  }
+  cursor: pointer;
 }
 
 .menu-button {
@@ -106,16 +141,21 @@ const showMenu = ref(false)
   left: 16px;
   top: 32px;
   border: 1px dashed rgba(126, 126, 126, 0.4);
-  border-radius: 12px;
+  border-radius: 4px;
   padding: 12px;
   z-index: 2;
   background-color: rgba(255, 255, 255, 1);
 }
 
+@media screen and (width <= 1068px) {
+  .route-container {
+    left: auto;
+    right: 16px;
+  }
+}
 .main {
   font-size: 16px !important;
   line-height: 24px !important;
-  font-weight: 800 !important;
 }
 
 .route {
@@ -130,17 +170,22 @@ const showMenu = ref(false)
 }
 
 .protfolio.router-link-exact-active {
-  color: #3a0a5e;
+  color: rgba(150, 200, 255);
   font-weight: 600;
 }
 
 .main.router-link-exact-active {
-  color: #3a0a5e;
+  color: rgba(150, 200, 255);
+  font-weight: 600;
+}
+
+.projects.router-link-exact-active {
+  color: rgba(150, 200, 255);
   font-weight: 600;
 }
 
 .links.router-link-exact-active {
-  color: #3a0a5e;
+  color: rgba(150, 200, 255);
   font-weight: 600;
 }
 </style>

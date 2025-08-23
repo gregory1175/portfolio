@@ -1,8 +1,5 @@
-<script setup lang="ts">
-import Navigation from '@/components/navigation/navigationBlock.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <Navigation />
   <router-view />
 </template>
