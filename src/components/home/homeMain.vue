@@ -6,8 +6,8 @@
       <h2>Обо мне</h2>
 
       <div class="about-section">
-        <div class="about-container">
-          <img src="/public/title-img.JPG" alt="Мое фото" class="about-img" />
+        <div class="about-container about-replace">
+          <img src="/title-img.JPG" alt="Мое фото" class="about-img" />
           <div class="about-info">
             <h3>Моя история</h3>
             <p class="about-text">
@@ -41,11 +41,11 @@
               пользователей.
             </p>
           </div>
-          <img src="/public/image2.jpg" alt="Мое фото" class="about-img" />
+          <img src="/image2.jpg" alt="Мое фото" class="about-img" />
         </div>
 
-        <div class="about-container">
-          <img src="/public/image3.jpg" alt="Мое фото" class="about-img" />
+        <div class="about-container about-replace">
+          <img src="/image3.jpg" alt="Мое фото" class="about-img" />
           <div class="about-info">
             <h3>Что я ищу</h3>
             <p class="about-text">
@@ -90,6 +90,18 @@
   display: flex;
   gap: 16px;
 }
+@media screen and (width <= 769px) {
+  .about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-replace {
+  flex-direction: column-reverse;
+  }
+}
+
 .about-img {
   min-width: 268px;
   max-width: 360px;
@@ -100,6 +112,15 @@
   border-radius: 8px;
 }
 
+@media screen and (width <= 769px) {
+  .about-img {
+  min-width: 400px;
+  max-width: 400px;
+  min-height: 400px;
+  max-height: 400px;
+  width: 100%;
+  }
+}
 .about-info {
   display: flex;
   flex-direction: column;
