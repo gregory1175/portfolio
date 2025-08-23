@@ -44,11 +44,8 @@ onUnmounted(() => {
   <div v-else>
     <div class="navigate">
       <button
-        v-if="showbutton && windowWidth < 669" @mousedown="
-        showbutton = true,
-        showMenu = false
-      "
-
+        v-if="showbutton && windowWidth < 669"
+        @mousedown="((showbutton = true), (showMenu = false))"
         class="button button-nav"
       >
         <img src="/public/burger.svg" class="navigate-img" />
@@ -64,13 +61,7 @@ onUnmounted(() => {
     </div>
 
     <nav v-if="showMenu && windowWidth < 669" class="route-container mobile-menu">
-      <button
-        class="button menu-button"
-        @mousedown="
-          showbutton = true,
-          showMenu = false
-        "
-      >
+      <button class="button menu-button" @mousedown="((showbutton = true), (showMenu = false))">
         <p class="menu-text">скрыть меню</p>
       </button>
       <router-link :to="{ name: 'main' }" class="main route">Главная</router-link>

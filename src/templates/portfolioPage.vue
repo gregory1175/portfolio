@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import MainHeader from '@/components/portfolio/mainHeader.vue'
-import MainBody from '@/components/portfolio/mainBody.vue'
-import MainFooter from '@/components/portfolio/mainFooter.vue'
+import PortfolioHeader from '@/components/portfolio/portfolioHeader.vue'
+import PortfolioBody from '@/components/portfolio/portfolioBody.vue'
+import PortfolioFooter from '@/components/portfolio/portfolioFooter.vue'
 import Navigation from '@/components/navigation/navigationBlock.vue'
 </script>
 
 <template>
   <Navigation />
-  <MainHeader />
-  <MainBody />
-  <MainFooter />
+  <PortfolioHeader />
+  <PortfolioBody />
+  <PortfolioFooter />
 </template>
 
 <style scoped></style>

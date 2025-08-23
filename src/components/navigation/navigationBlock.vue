@@ -15,33 +15,21 @@ watch(showMenu, (newVal) => {
   <div class="navigate" :style="{ padding: paddingValue }">
     <button
       v-if="showbutton"
-      @mousedown="
-        showbutton = false,
-        showMenu = true
-      "
+      @mousedown="((showbutton = false), (showMenu = true))"
       class="button button-nav"
     >
       <img src="/public/burger.svg" class="navigate-img" />
     </button>
     <h3
       v-if="showbutton"
-      @mousedown="
-        showbutton = false,
-        showMenu = true
-      "
+      @mousedown="((showbutton = false), (showMenu = true))"
       class="navigate-title"
     >
       Навигация
     </h3>
   </div>
   <nav v-if="showMenu" class="route-container">
-    <button
-      class="button menu-button"
-      @mousedown="
-        showbutton = true,
-        showMenu = false
-      "
-    >
+    <button class="button menu-button" @mousedown="((showbutton = true), (showMenu = false))">
       <p class="menu-text">скрыть меню</p>
     </button>
     <router-link :to="{ name: 'main' }" class="main route">Главная</router-link>
@@ -66,7 +54,7 @@ watch(showMenu, (newVal) => {
 
 @media screen and (width > 1069px) {
   .navigate {
-  border: 1px dashed rgba(126, 126, 126, 0.4);
+    border: 1px dashed rgba(126, 126, 126, 0.4);
   }
 }
 @media screen and (width <= 1068px) {

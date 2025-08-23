@@ -6,5 +6,4 @@
   </footer>
 </template>
 
-<style>
-</style>
+<style></style>

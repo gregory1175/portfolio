@@ -4,19 +4,19 @@
   <header class="header section">
     <div class="header-greetings">
       <div class="greetings-info">
-        <h1 class="greetings-title">Доброго времени суток!</h1>
-        <h2 class="greetings-subtitle">Wordory - личный сайт-блог Денисова Григория</h2>
+        <h1 class="greetings-title">Добро пожаловать на мой сайт Wordory</h1>
+        <h2 class="greetings-subtitle">Wordory - мои заметки о коде, дизайне и технологиях</h2>
       </div>
     </div>
-    <h3 class="info-title">Что здесь можно найти?</h3>
+    <h3 class="info-title">Что вы найдете на сайте?</h3>
     <div class="header-info">
       <p class="info-text">
-        -> Посмотреть мое
-        <router-link :to="{ name: 'portfolio' }" class="route protfolio">Портфолио</router-link>,
-        найти ссылки на мои соц сети и не только
+        → Мое
+        <router-link :to="{ name: 'portfolio' }" class="route protfolio">портфолио</router-link> и
+        ссылки на соцсети
       </p>
-      <p class="info-text">-> Ознакомиться с моими проектами и технологиями, которые я использую</p>
-      <p class="info-text">-> Связаться со мной для сотрудничества или обсуждения проектов</p>
+      <p class="info-text">→ Описание проектов и технологий, с которыми я работаю</p>
+      <p class="info-text">→ Контакты для сотрудничества и общения</p>
     </div>
   </header>
 </template>

@@ -32,9 +32,7 @@
           </div>
         </div>
         <div>
-          <p>
-
-          </p>
+          <p></p>
           <router-link :to="{ name: 'projects' }" class="route projects">Проекты</router-link>
         </div>
       </div>
@@ -48,9 +46,7 @@
           </div>
         </div>
         <div>
-          <p>
-
-          </p>
+          <p></p>
           <router-link :to="{ name: 'projects' }" class="route projects">Проекты</router-link>
         </div>
       </div>
