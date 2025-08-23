@@ -8,22 +8,19 @@ const windowWidth = ref(window.innerWidth)
 const updateWidth = () => {
   windowWidth.value = window.innerWidth
 
-  // Автоматически скрываем меню при переходе на большой экран
   if (windowWidth.value >= 1025) {
     showMenu.value = false
     showbutton.value = false
   }
-  // Для средних экранов показываем кнопку и скрываем меню
   else if (windowWidth.value >= 669) {
     showbutton.value = true
     showMenu.value = false
   }
-  // Для маленьких экранов оставляем текущее состояние
 }
 
 onMounted(() => {
   window.addEventListener('resize', updateWidth)
-  updateWidth() // Инициализируем при монтировании
+  updateWidth()
 })
 
 onUnmounted(() => {
@@ -32,7 +29,6 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <!-- Навигация для больших экранов -->
   <nav v-if="windowWidth >= 1025" class="route-container full-navigation">
     <router-link :to="{ name: 'main' }" class="main route">Главная</router-link>
     <router-link :to="{ name: 'portfolio' }" class="route protfolio">Портфолио</router-link>
@@ -40,18 +36,16 @@ onUnmounted(() => {
     <router-link :to="{ name: 'links' }" class="route links">Ссылки</router-link>
   </nav>
 
-  <!-- Мобильная навигация -->
   <div v-else>
     <div class="navigate">
-      <button
-        v-if="showbutton && windowWidth < 669"
-        @mousedown="((showbutton = true), (showMenu = false))"
-        class="button button-nav"
-      >
-        <img src="/public/burger.svg" class="navigate-img" />
-      </button>
+<button
+  v-if="showbutton && windowWidth < 669"
+  @click="showMenu = !showMenu"
+  class="button button-nav"
+>
+  <img src="/public/burger.svg" class="navigate-img" />
+</button>
 
-      <!-- Навигация для средних экранов (669-1024) -->
       <nav v-if="windowWidth >= 669 && windowWidth < 1025" class="medium-navigation">
         <router-link :to="{ name: 'main' }" class="main route">Главная</router-link>
         <router-link :to="{ name: 'portfolio' }" class="route protfolio">Портфолио</router-link>
@@ -120,11 +114,50 @@ onUnmounted(() => {
   padding-top: 48px;
 }
 
+.navigate-img {
+  width: 25px;
+  height: 25px;
+}
+
+
+.route {
+  color: rgba(0, 0, 0, 1);
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+.route:hover {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.protfolio.router-link-exact-active {
+  color: rgba(150, 200, 255);
+  font-weight: 600;
+}
+
+.main.router-link-exact-active {
+  color: rgba(150, 200, 255);
+  font-weight: 600;
+}
+
+.projects.router-link-exact-active {
+  color: rgba(150, 200, 255);
+  font-weight: 600;
+}
+
+.links.router-link-exact-active {
+  color: rgba(150, 200, 255);
+  font-weight: 600;
+}
 /* Адаптивные стили */
 @media (max-width: 668px) {
   .medium-navigation {
     display: none;
   }
+  .navigate {
+  height: auto;
+}
 }
 
 @media (min-width: 669px) and (max-width: 1024px) {
