@@ -11,8 +11,7 @@ const updateWidth = () => {
   if (windowWidth.value >= 1025) {
     showMenu.value = false
     showbutton.value = false
-  }
-  else if (windowWidth.value >= 669) {
+  } else if (windowWidth.value >= 669) {
     showbutton.value = true
     showMenu.value = false
   }
@@ -38,13 +37,13 @@ onUnmounted(() => {
 
   <div v-else>
     <div class="navigate">
-<button
-  v-if="showbutton && windowWidth < 669"
-  @click="showMenu = !showMenu"
-  class="button button-nav"
->
-  <img src="/public/burger.svg" class="navigate-img" />
-</button>
+      <button
+        v-if="showbutton && windowWidth < 669"
+        @click="showMenu = !showMenu"
+        class="button button-nav"
+      >
+        <img src="/public/burger.svg" class="navigate-img" />
+      </button>
 
       <nav v-if="windowWidth >= 669 && windowWidth < 1025" class="medium-navigation">
         <router-link :to="{ name: 'main' }" class="main route">Главная</router-link>
@@ -119,7 +118,6 @@ onUnmounted(() => {
   height: 25px;
 }
 
-
 .route {
   color: rgba(0, 0, 0, 1);
   text-decoration: none;
@@ -156,8 +154,8 @@ onUnmounted(() => {
     display: none;
   }
   .navigate {
-  height: auto;
-}
+    height: auto;
+  }
 }
 
 @media (min-width: 669px) and (max-width: 1024px) {

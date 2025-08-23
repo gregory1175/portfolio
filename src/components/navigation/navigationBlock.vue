@@ -50,13 +50,9 @@ watch(showMenu, (newVal) => {
   top: 32px;
   z-index: 2;
   background-color: rgba(255, 255, 255, 1);
+  border: 1px dashed rgba(126, 126, 126, 0.4);
 }
 
-@media screen and (width > 1069px) {
-  .navigate {
-    border: 1px dashed rgba(126, 126, 126, 0.4);
-  }
-}
 @media screen and (width <= 1068px) {
   .navigate {
     left: auto;

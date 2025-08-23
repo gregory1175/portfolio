@@ -19,7 +19,12 @@
             занимался созданием новых страниц, улучшением архитектуры по методологии FSD, внедрением
             админ-панели, постановкой задач команде и написанием документации в Storybook.
           </p>
-          <router-link :to="{ name: 'projects' }" class="route projects">Проекты</router-link>
+          <router-link
+            :to="{ name: 'projectDetail', params: { id: 'procharity' } }"
+            class="route projects"
+          >
+            Подробнее
+          </router-link>
         </div>
       </div>
 

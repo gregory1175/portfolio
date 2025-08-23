@@ -35,18 +35,18 @@ import '@styles/sectionStyles/local.css'
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 16px;
+  gap: 8px;
 }
 
 .header-title {
   font-size: 24px;
-  line-height: 36px;
+  line-height: 32px;
   font-weight: 900;
 }
 
 .header-subtitle {
   font-size: 36px;
-  line-height: 48px;
+  line-height: 44px;
   font-weight: 400;
 }
 
@@ -59,6 +59,6 @@ import '@styles/sectionStyles/local.css'
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0, 0.4);
 }
 </style>
